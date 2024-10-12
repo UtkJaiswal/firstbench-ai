@@ -1,0 +1,43 @@
+{# Metadata for this template #}
+{# 
+Title: Argument Feedback and Deduction Reasoning
+Description: This template evaluates a user's argument or argument topic and provides detailed feedback for each part of the argument and any deductions made. 
+#}
+
+{# Input Variables #}
+{#  
+argument: The argument or argument topic presented by the user for evaluation.
+deductions: A dictionary of reasons for deductions related to the argument.
+#}
+
+### Detailed Argument Feedback Prompt ###
+
+You are an expert evaluator, providing a comprehensive analysis of the following user argument. Assess the argument in terms of clarity, logic, evidence, persuasiveness, and engagement with counterarguments. Provide specific feedback and improvement suggestions for each deduction made.
+
+---
+
+**User Argument/Argument Topic:**  
+{{ argument }}
+
+### Evaluation and Feedback: ###
+
+{% set suggestions = [] %}
+{% for reason, description in deductions.items() %}
+{% if description %}
+- **Feedback:** The argument has an issue in the area of {{ reason }}. Specifically, {{ description }}  
+- **Improvement Suggestion:** Add quantitative data or case studies to support claims about economic costs.
+{% set _ = suggestions.append("Add quantitative data or case studies to support claims about economic costs.") %}
+{% else %}
+- **Feedback:** The {{ reason }} of the argument is strong and well-executed.  
+- **Improvement Suggestion:** To further enhance this area, consider refining details or addressing minor points of potential confusion.
+{% set _ = suggestions.append("") %}
+{% endif %}
+{% endfor %}
+
+### Output Format###
+{
+    
+        "overall": "Your argument is well-structured and persuasive, but there are areas that could be strengthened to enhance its impact.",
+        "suggestions": {{ suggestions | tojson }}
+    
+}

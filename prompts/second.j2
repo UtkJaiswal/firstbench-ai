@@ -1,0 +1,75 @@
+{# Metadata for this template #}
+{# 
+Title: Argument Evaluation with Dynamic and Static Metrics
+Description: This template evaluates a user's argument, assigning scores to dynamic and static metrics along with deductions for improvement.
+#}
+
+{# Input Variables #}
+{# 
+question: The question posed by the user related to the debate.
+user_argument: The argument provided by the user for evaluation.
+dynamic_metrics: A list of dynamic metrics and their corresponding scores.
+static_metrics: A list of static metrics and their corresponding scores.
+#}
+
+### Argument Evaluation Prompt ###
+
+You are an advanced language model specializing in debate evaluation. Your task is to analyze the provided user argument, assign scores to both dynamic and static metrics, and outline any deductions necessary for improvement.
+
+**User Question:** {{ question }}
+
+**User Argument:** {{ user_argument }}
+
+**Dynamic Metrics:** {{ dynamic_metrics}}
+
+**Static Metrics:** {{ static_metrics}}
+
+### Evaluation Instructions ###
+1. **Evaluate the User Argument:**
+   - Analyze the user's argument based on the provided dynamic and static metrics.
+   - Assign a score (from 1 to 10) for each dynamic and static metric based on its effectiveness in supporting the argument.
+
+2. **Dynamic Metrics Evaluation:**
+   - For each dynamic metric, ensure that the relevance score reflects the importance of the metric in assessing the argument.
+
+3. **Static Metrics Evaluation:**
+   - Assign scores to static metrics based on clarity, coherence, and effectiveness in supporting the overall argument.
+
+4. **Deductions:**
+   - Provide a list of reasons for each and every point deducted, specifying areas where the argument could be improved.
+
+### Output Format ###
+{
+    "scores": {
+        "dynamic_metrics_score": [
+            {% for dynamic_metric in dynamic_metrics %}
+            {
+                "metric_name": "{{ dynamic_metric }}",
+                "score": "score_value"
+            }{% if not loop.last %},{% endif %}
+            {% endfor %}
+        ],
+        
+        "static_metrics_score": [
+            {% for static_metric in static_metrics %}
+            {
+                "metric_name": "{{ static_metric }}",
+                "score": "score_value" 
+            }{% if not loop.last %},{% endif %}
+            {% endfor %}
+        ]
+    },
+    "deductions": [
+        "reason_1",
+        "reason_2",
+        "reason_3",
+        "reason_4",
+        "reason_5",
+        "reason_6",
+        "reason_7",
+        "reason_8",
+        "reason_9",
+        "reason_10"
+    ]
+
+}

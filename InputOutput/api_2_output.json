@@ -1,0 +1,49 @@
+{
+  "scores": {
+    "dynamic_metrics_score": {
+      {
+        "metric_name": "",
+        "score": 0
+      },
+      {
+        "metric_name": "",
+        "score": 0
+      },
+      {
+        "metric_name": "",
+        "score": 0
+      },
+      {
+        "metric_name": "",
+        "score": 0
+      },
+      {
+        "metric_name": "",
+        "score": 0
+      }
+    },
+    "static_metrics_score": {
+      {
+        "metric_name": "",
+        "score": 0
+      },
+      {
+        "metric_name": "",
+        "score": 0
+      },
+      {
+        "metric_name": "",
+        "score": 0
+      },
+      {
+        "metric_name": "",
+        "score": 0
+      },
+      {
+        "metric_name": "",
+        "score": 0
+      }
+    }
+  },
+  "deductions": [,,,,,,,,,,,,]
+}

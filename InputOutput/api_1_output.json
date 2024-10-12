@@ -1,0 +1,89 @@
+{
+    "dynamic_metrics": [
+        {
+            "genre": "Factual",
+            "dynamic_metric": [
+                {
+                    "metric": "Accuracy of information",
+                    "relevance_score": 9
+                },
+                {
+                    "metric": "Reliability of sources",
+                    "relevance_score": 8
+                },
+                {
+                    "metric": "Relevance of data",
+                    "relevance_score": 7
+                }
+            ]
+        },
+        {
+            "genre": "Analytical",
+            "dynamic_metric": [
+                {
+                    "metric": "Depth of analysis",
+                    "relevance_score": 10
+                },
+                {
+                    "metric": "Logical consistency",
+                    "relevance_score": 9
+                },
+                {
+                    "metric": "Critical thinking",
+                    "relevance_score": 8
+                }
+            ]
+        },
+        {
+            "genre": "Theoretical",
+            "dynamic_metric": [
+                {
+                    "metric": "Theoretical relevance",
+                    "relevance_score": 8
+                },
+                {
+                    "metric": "Originality of ideas",
+                    "relevance_score": 7
+                },
+                {
+                    "metric": "Clarity of theoretical framework",
+                    "relevance_score": 6
+                }
+            ]
+        },
+        {
+            "genre": "Ethical/Moral",
+            "dynamic_metric": [
+                {
+                    "metric": "Ethical soundness",
+                    "relevance_score": 9
+                },
+                {
+                    "metric": "Clarity of moral reasoning",
+                    "relevance_score": 8
+                },
+                {
+                    "metric": "Relevance of ethical considerations",
+                    "relevance_score": 7
+                }
+            ]
+        },
+        {
+            "genre": "Policy-Based",
+            "dynamic_metric": [
+                {
+                    "metric": "Feasibility of proposed solutions",
+                    "relevance_score": 10
+                },
+                {
+                    "metric": "Potential impact on society",
+                    "relevance_score": 9
+                },
+                {
+                    "metric": "Clarity of policy implications",
+                    "relevance_score": 8
+                }
+            ]
+        }
+    ]
+}

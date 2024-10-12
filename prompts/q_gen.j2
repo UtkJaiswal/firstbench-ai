@@ -1,0 +1,24 @@
+{#
+Title: UPSC Advanced Question Generation Template
+Description: A template to generate five questions based on subject, topic, and subtopic.
+Automatically generates questions and assigns difficulty levels in increasing order.
+#}
+UPSC Advanced Question Generation
+Subject: {{ subject }}
+Topic: {{ topic }}
+Subtopic: {{ subtopic }}
+Output Format
+{
+"questions": [
+{% set difficulty_levels = ["Easy", "Moderate", "Moderate-Hard", "Hard", "Very Hard"] %}
+{% for i in range(5) %}
+{
+"number": {{ i + 1 }},
+"difficulty": "{{ difficulty_levels[i] }}",
+"question": "generated_question_{{ i + 1 }}"
+}{% if not loop.last %},{% endif %}
+{% endfor %}
+]
+}
+
+

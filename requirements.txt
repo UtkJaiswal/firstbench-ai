@@ -1,0 +1,7 @@
+pydentic
+instructor
+jinja2
+python-dotenv
+langchain_openai
+pyyaml
+python-frontma

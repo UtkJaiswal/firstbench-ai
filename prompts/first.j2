@@ -1,0 +1,211 @@
+{# Metadata for this template #}
+{# 
+Title: Argument Classification and Dynamic Metrics with Relevance Scores
+Description: This template classifies the user's debate argument, selects the 5 most relevant genres, generates 3 dynamic metrics for each, and assigns relevance scores for filtering.
+#}
+
+{# Input Variables #}
+{# 
+question: The question posed by the user related to the debate.
+user_argument: The argument provided by the user for classification.
+#}
+
+### Argument Classification and Metric Generation Prompt ###
+
+You are a highly sophisticated language model with expertise in debate analysis. Your task is to analyze the following user argument, classify it by the 5 most relevant genres, and generate 3 dynamic scoring metrics for each genre along with their relevance scores. 
+
+**User Question:** {{ question }}
+
+**User Argument:** {{ user_argument }}
+
+### Classification and Metric Generation Instructions ###
+1. **Examine the Question:**
+   - Understand the context of the question. Identify if it suggests a specific type of reasoning (e.g., factual, policy-based, ethical, etc.).
+
+2. **Analyze the User Argument Section by Section:**
+   - Break down the user argument into sections.
+   - For each section:
+     - Analyze the reasoning style and argument structure.
+     - Determine the 5 most relevant genres for each section from the list below:
+       - **Factual**: Empirical data or verifiable facts.
+       - **Analytical**: Critical thinking, interpretation of data.
+       - **Theoretical**: Grounded in established theories or frameworks.
+       - **Ethical/Moral**: Related to ethical dilemmas or moral reasoning.
+       - **Policy-Based**: Focus on policy formation, critique, or analysis.
+       - **Causal**: Cause-and-effect reasoning.
+       - **Persuasive**: Designed to influence the audience.
+       - **Narrative**: Storytelling or anecdotal evidence.
+       - **Comparative**: Drawing comparisons between ideas or concepts.
+       - **Critical**: Critiquing or evaluating existing viewpoints.
+
+3. **Generate Dynamic Scoring Metrics for Each Genre:**
+   - For each of the 5 identified genres, select 3 relevant metrics from the genre-specific lists below.
+   - Assign a relevance score (from 1 to 100) for each metric, indicating how important it is in evaluating the argument.
+
+4. **Genres and Metrics**:
+
+   - **Factual Metrics**:
+     - Accuracy of information
+     - Reliability of sources
+     - Relevance of data
+     - Clarity of presentation
+     - Contextual understanding
+     - Statistical significance
+     - Use of primary vs. secondary data
+     - Coverage of key facts
+     - Currentness of information
+     - Interpretation of data
+
+   - **Analytical Metrics**:
+     - Depth of analysis
+     - Logical consistency
+     - Use of evidence
+     - Critical thinking
+     - Insightfulness
+     - Clarity of argument structure
+     - Identification of assumptions
+     - Quality of conclusions drawn
+     - Relevance of supporting examples
+     - Ability to connect ideas
+
+   - **Theoretical Metrics**:
+     - Theoretical relevance
+     - Coherence with established thought
+     - Originality of ideas
+     - Applicability of theory
+     - Integration of supporting evidence
+     - Clarity of theoretical framework
+     - Use of terminology
+     - Depth of theoretical engagement
+     - Consideration of alternative theories
+     - Implications of theoretical application
+
+   - **Ethical/Moral Metrics**:
+     - Ethical soundness
+     - Sensitivity to context
+     - Alignment with common ethical frameworks
+     - Implications for stakeholders
+     - Clarity of moral reasoning
+     - Examination of potential biases
+     - Relevance of ethical considerations
+     - Inclusivity of perspectives
+     - Discussion of ethical dilemmas
+     - Consideration of long-term impacts
+
+   - **Policy-Based Metrics**:
+     - Feasibility of proposed solutions
+     - Potential impact on society
+     - Alignment with societal needs
+     - Clarity of policy implications
+     - Consideration of alternatives
+     - Evidence supporting policy effectiveness
+     - Understanding of policy context
+     - Stakeholder engagement
+     - Addressing potential drawbacks
+     - Implementation strategies
+
+   - **Causal Metrics**:
+     - Strength of causality
+     - Accuracy of connections made
+     - Evidence supporting causal claims
+     - Clarity of explanation
+     - Consideration of counterarguments
+     - Use of causal diagrams or models
+     - Depth of causal analysis
+     - Exploration of underlying mechanisms
+     - Identification of confounding factors
+     - Overall coherence of causal reasoning
+
+   - **Persuasive Metrics**:
+     - Persuasiveness of the argument
+     - Emotional appeal
+     - Clarity of message
+     - Engagement with the audience
+     - Use of rhetorical techniques
+     - Strength of the call to action
+     - Credibility of the speaker
+     - Relevance of examples used
+     - Addressing counterarguments
+     - Overall impact of the argument
+
+   - **Narrative Metrics**:
+     - Relevance of the story
+     - Emotional resonance
+     - Clarity of storytelling
+     - Connection to the central argument
+     - Use of illustrative examples
+     - Depth of character development
+     - Structure of the narrative (beginning, middle, end)
+     - Integration of factual information
+     - Authenticity of the narrative voice
+     - Overall engagement with the audience
+
+   - **Comparative Metrics**:
+     - Relevance of comparisons made
+     - Depth of analysis between subjects
+     - Clarity in presenting similarities and differences
+     - Use of supporting evidence
+     - Critical evaluation of both sides
+     - Consideration of context for comparisons
+     - Structure of comparative argument
+     - Identification of biases in comparison
+     - Overall coherence of the comparison
+     - Relevance to the central argument
+
+   - **Critical Metrics**:
+     - Depth of critique
+     - Fairness in evaluation
+     - Rigor in supporting evidence
+     - Clarity of argumentation
+     - Consideration of opposing viewpoints
+     - Quality of reasoning
+     - Ability to identify strengths and weaknesses
+     - Use of scholarly references
+     - Coherence of critique structure
+     - Impact of the critique on the overall argument
+
+### Output Format ###
+{
+    "dynamic_metrics" : [
+        {
+            "genre":"{{ "genre_1" }}", 
+            "dynamic_metric": [
+                {"metric":"{{ "metric_1" }}", "relevance_score": "{{ "relevance_1" }}"},
+                {"metric":"{{ "metric_2" }}", "relevance_score": "{{ "relevance_2" }}"},
+                {"metric":"{{ "metric_3" }}", "relevance_score": "{{ "relevance_3" }}"}
+            ]
+        },
+        {
+            "genre":"{{ "genre_2" }}", 
+            "dynamic_metric": [
+                {"metric":"{{ "metric_1" }}", "relevance_score": "{{ "relevance_1" }}"},
+                {"metric":"{{ "metric_2" }}", "relevance_score": "{{ "relevance_2" }}"},
+                {"metric":"{{ "metric_3" }}", "relevance_score": "{{ "relevance_3" }}"}
+            ]
+        },
+        {
+            "genre":"{{ "genre_3" }}", 
+            "dynamic_metric": [
+                {"metric":"{{ "metric_1" }}", "relevance_score": "{{ "relevance_1" }}"},
+                {"metric":"{{ "metric_2" }}", "relevance_score": "{{ "relevance_2" }}"},
+                {"metric":"{{ "metric_3" }}", "relevance_score": "{{ "relevance_3" }}"}
+            ]
+        },
+        {
+            "genre":"{{ "genre_4" }}", 
+            "dynamic_metric": [
+                {"metric":"{{ "metric_1" }}", "relevance_score": "{{ "relevance_1" }}"},
+                {"metric":"{{ "metric_2" }}", "relevance_score": "{{ "relevance_2" }}"},
+                {"metric":"{{ "metric_3" }}", "relevance_score": "{{ "relevance_3" }}"}
+            ]
+        },
+        {
+            "genre":"{{ "genre_5" }}", 
+            "dynamic_metric": [
+                {"metric":"{{ "metric_1" }}", "relevance_score": "{{ "relevance_1" }}"},
+                {"metric":"{{ "metric_2" }}", "relevance_score": "{{ "relevance_2" }}"},
+                {"metric":"{{ "metric_3" }}", "relevance_score": "{{ "relevance_3" }}"}
+            ]
+        }
+    ]
+}

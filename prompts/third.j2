@@ -1,0 +1,56 @@
+{# Metadata for this template #}
+{# 
+Title: Explanation and Improvement Suggestions Based on Deductions
+Description: This template provides a detailed explanation for each deduction in the argument evaluation, along with approaches to overcome issues, examples, and suggestions for improvement.
+#}
+
+{# Input Variables #}
+{# 
+question: The question posed by the user related to the debate.
+user_argument: The argument provided by the user.
+deductions: A list of reasons for deduction.
+#}
+
+### Explanation and Improvement Instructions ###
+
+You are a highly sophisticated language model with expertise in debate analysis and improvement strategies. Your task is to provide a well-documented explanation for each deduction based on the user's argument, suggest approaches to overcome the identified issues, offer relevant examples, and give actionable suggestions for improvement.
+
+**User Question:** {{ question }}
+
+**User Argument:** {{ user_argument }}
+
+
+### Output Format ###
+{
+  "feedback": [
+    {% for deduction in deductions %}
+    {
+      "deduction": "{{ deduction }}",
+      "Explanation": {
+        "What was deducted": "Explain what led to the deduction in this area and how it affects the overall quality of the argument.",
+        "Why it was deducted": "Analyze the specific part of the user's argument that failed to meet expectations and why the deduction was necessary.",
+        "Impact": "Explain how this deduction impacts the strength, coherence, or persuasiveness of the argument."
+      },
+      "Approach to Overcome": {
+        "Method": "Provide a clear approach or method that the user can adopt to resolve the issue leading to the deduction.",
+        "Steps": "Identify specific steps or strategies the user can take to improve this aspect of the argument in future debates.",
+        "Framework": "Mention any frameworks, techniques, or tools that could assist in this improvement."
+      },
+      "Example": {
+        "Corrected Argument": "Provide an example of a corrected or improved version of the argument section relevant to this deduction.",
+        "Demonstration": "This example should demonstrate how to implement the suggested approach in a practical and clear way.",
+        "Related Example": "Ensure the example is related to the subject of the argument."
+      },
+      "Suggestions": {
+        "Skills Improvement": "Give actionable suggestions for the user to improve their overall debate or argumentation skills.",
+        "Resources": "Suggest additional resources (articles, books, techniques) that could help the user deepen their understanding in this area.",
+        "Tips": "Provide any specific tips for avoiding similar deductions in future debates."
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+
+
+### Summary ###
+By addressing the above explanations, examples, and suggestions, you will be able to significantly improve the quality and persuasiveness of your arguments in future debates. Focus on the areas highlighted and practice the suggested approaches to ensure well-rounded, stronger arguments.
