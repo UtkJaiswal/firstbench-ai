@@ -4,6 +4,7 @@ from prompt_2 import test_evaluation
 from prompt_3 import generate_explanation
 from pydantic import BaseModel
 from typing import List
+from q_gen import generate_complex_question
 import pprint
 from utils.env import *
 from utils.object import *
@@ -40,5 +41,15 @@ def api_generate_explanation():
     response = generate_explanation(ThirdPromptClass, prompt_temp_name, **kwargs)
     return (response)
 
+
+@app.route('/api/q_gen', methods=['POST'])
+def api_q_gen():
+    data = request.json
+    prompt_temp_name = "q_gen"
+    kwargs = data.get('kwargs', {})
+    response = generate_complex_question(FirstPromptClass, prompt_temp_name, **kwargs)
+    
+    return response
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
