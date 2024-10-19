@@ -29,7 +29,7 @@ jobs:
         username: ${{ secrets.REMOTE_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         source: "./"  # This points to the current directory
-        target: "/var/www/your_project_directory"
+        target: "/var/www/firstbench-ai"
 
     - name: Restart Python application
       uses: appleboy/ssh-action@master
