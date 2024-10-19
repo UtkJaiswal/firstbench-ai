@@ -28,7 +28,7 @@ jobs:
         host: ${{ secrets.REMOTE_HOST }}
         username: ${{ secrets.REMOTE_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        source: "./"  # This points to the current directory
+        source: "./*"  # This points to the current directory
         target: "/var/www/firstbench-ai"
 
     - name: Restart Python application
